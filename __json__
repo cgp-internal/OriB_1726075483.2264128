@@ -1,0 +1,80 @@
+{
+    "db.py": {
+        "description": "Sets up a sqlite database using sqlalchemy",
+        "dependencies": {},
+        "exposes": [
+            "db",
+            "Base"
+        ]
+    },
+    "run.sh": {
+        "description": "Runs the Flask app with dependencies",
+        "dependencies": {
+            "app.py": [],
+            "requirements.txt": [],
+            "models/Note.py": [],
+            "controllers/note_controller.py": []
+        },
+        "exposes": []
+    },
+    "README.md": {
+        "description": "Flask API README file",
+        "dependencies": {},
+        "exposes": []
+    },
+    ".gitignore": {
+        "description": "File ignoring patterns for Git repository",
+        "dependencies": {},
+        "exposes": []
+    },
+    "app.py": {
+        "description": "Flask API for creating, getting, updating and deleting notes",
+        "dependencies": {
+            "models/Note.py": [
+                "Note"
+            ]
+        },
+        "exposes": [
+            "create_note",
+            "get_notes",
+            "get_note",
+            "update_note",
+            "delete_note"
+        ]
+    },
+    "requirements.txt": {
+        "description": "List of required packages for the project",
+        "dependencies": {},
+        "exposes": []
+    },
+    "models/Note.py": {
+        "description": "Defines Note class using SQLAlchemy",
+        "dependencies": {
+            "db.py": [
+                "Base"
+            ]
+        },
+        "exposes": [
+            "Note"
+        ]
+    },
+    "models/__pycache__/Note.cpython-310.pyc": {
+        "description": "",
+        "dependencies": {},
+        "exposes": []
+    },
+    "controllers/note_controller.py": {
+        "description": "Controller for note operations.",
+        "dependencies": {
+            "models/Note.py": [
+                "Note"
+            ]
+        },
+        "exposes": [
+            "create_note",
+            "get_note",
+            "update_note",
+            "delete_note"
+        ]
+    }
+}
